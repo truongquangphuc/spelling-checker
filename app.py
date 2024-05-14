@@ -3,7 +3,7 @@ from docx import Document
 from transformers import pipeline
 
 # Initialize the language correction model
-corrector = pipeline("text2text-generation", model="bmd1905/vietnamese-correction")
+corrector = pipeline("text2text-generation", model="bmd1905/vietnamese-correction-v2")
 
 def read_docx(file_path):
     doc = Document(file_path)
