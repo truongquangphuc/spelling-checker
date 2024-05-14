@@ -3,7 +3,7 @@ from docx import Document
 from transformers import pipeline
 
 # Initialize the language correction model
-corrector = pipeline("text2text-generation", model="bmd1905/vietnamese-correction-v2")
+corrector = pipeline("text2text-generation", model="bmd1905/vietnamese-correction")
 
 def read_docx(file_path):
     doc = Document(file_path)
@@ -27,7 +27,7 @@ def process_document(doc_content):
 
             st.markdown(result_with_color, unsafe_allow_html=True)
 
-            st.subheader("Đã sửa:")
+            st.write("- ")
             st.write(corrected_text)
 
             # differences = [(original_word, corrected_word) for original_word, corrected_word in zip(text.split(), corrected_text.split()) if original_word != corrected_word]
