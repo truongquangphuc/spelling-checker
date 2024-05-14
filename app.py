@@ -30,23 +30,23 @@ def process_document(doc_content):
             st.subheader("Đã sửa:")
             st.write(corrected_text)
 
-            differences = [(original_word, corrected_word) for original_word, corrected_word in zip(text.split(), corrected_text.split()) if original_word != corrected_word]
-            if differences:
-                st.write("Thay đổi:")
-                for original_word, corrected_word in differences:
-                    st.write(f"    > '{original_word}' (gốc) -> '{corrected_word}' (sửa)")
-            else:
-                st.write("Không có gì cần sửa.")
+            # differences = [(original_word, corrected_word) for original_word, corrected_word in zip(text.split(), corrected_text.split()) if original_word != corrected_word]
+            # if differences:
+            #     st.write("Thay đổi:")
+            #     for original_word, corrected_word in differences:
+            #         st.write(f"    > '{original_word}' (gốc) -> '{corrected_word}' (sửa)")
+            # else:
+            #     st.write("Không có gì cần sửa.")
 
 
     return result
 
 # Streamlit app
 def main():
-    st.title("Vietnamese Text Correction")
+    st.title("Gợi ý sửa lỗi chính tả")
 
     # File upload
-    uploaded_file = st.file_uploader("Upload a DOCX file", type="docx")
+    uploaded_file = st.file_uploader("Tải tệp tin định dạng docx", type="docx")
 
     if uploaded_file is not None:
         # Read and process the uploaded file
